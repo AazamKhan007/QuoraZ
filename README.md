@@ -92,7 +92,7 @@ Frontend: http://localhost:3000
 Backend API: http://localhost:5000
 
 ## 🗂️ Project Structure
-
+```
 quora-genz/
 ├── client/ # React frontend
 │ ├── public/
@@ -120,5 +120,6 @@ quora-genz/
 ├── server.js # Express server
 ├── package.json # Server dependencies
 └── .env # Environment variables
+```
 
 Made with ❤️ and lots of ☕
