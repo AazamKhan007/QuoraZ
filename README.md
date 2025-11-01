@@ -120,6 +120,5 @@ quora-genz/
 ├── server.js # Express server
 ├── package.json # Server dependencies
 └── .env # Environment variables
-```
 
 Made with ❤️ and lots of ☕
