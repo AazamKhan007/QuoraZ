@@ -91,6 +91,8 @@ Frontend: http://localhost:3000
 
 Backend API: http://localhost:5000
 
+## 🗂️ Project Structure
+
 quora-genz/
 ├── client/ # React frontend
 │ ├── public/
