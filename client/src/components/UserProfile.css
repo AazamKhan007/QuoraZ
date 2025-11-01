@@ -1,0 +1,289 @@
+.user-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card-bg); /* Simple card background */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  /* box-shadow: ... <-- Extra shadow hata diya */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+.profile-avatar-section {
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  border: 3px solid var(--secondary-bg); /* Simple border */
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: var(--gradient-primary); /* Gradient rakha hai avatar ke liye */
+  color: white;
+  /* box-shadow: ... <-- Extra shadow hata diya */
+}
+
+.avatar-selector-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar-edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 20px; /* Isko bhi radius diya */
+  overflow: hidden; /* Overlay ko mask karne ke liye */
+}
+
+.avatar-edit-btn:hover {
+  transform: scale(1.05);
+}
+
+.avatar-edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px; /* Match avatar */
+}
+
+.avatar-edit-btn:hover .avatar-edit-overlay {
+  opacity: 1;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary); /* Gradient hata diya */
+  margin-bottom: 0.5rem;
+}
+
+.profile-bio {
+  color: var(--text-secondary); /* Thoda lighter */
+  font-size: 1rem; /* Thoda chhota */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.profile-location {
+  color: var(--text-secondary); /* Neon yellow se change kiya */
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stats {
+  display: flex; /* <-- YEH CHANGE KIYA (Grid se Flex) */
+  flex-wrap: wrap; /* Taaki mobile par wrap ho */
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  /* grid-template-columns: repeat(4, 1fr); <-- Hata diya */
+}
+
+.stat-item {
+  text-align: left; /* Center se left kiya */
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05); /* Simple background */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Simple border */
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary); /* Neon cyan se change kiya */
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem; /* Thoda chhota */
+  color: var(--text-muted); /* Muted color */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-input,
+.edit-textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Thoda visible border */
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  /* box-shadow: ... <-- Extra shadow hata diya */
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.edit-btn {
+  background: rgba(255, 255, 255, 0.1); /* Gradient se change kiya */
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.save-btn {
+  background: var(--gradient-primary); /* Isko primary rakha */
+  color: white;
+}
+
+.cancel-btn {
+  background: none; /* Transparent kiya */
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.edit-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  /* box-shadow: ... <-- Extra shadow hata diya */
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  /* box-shadow: ... <-- Extra shadow hata diya */
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+/* Followers section CSS hata diya kyunki JS se hata hua hai */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-profile {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .profile-stats {
+    display: grid; /* Mobile par grid theek hai */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    text-align: center; /* Mobile par center */
+  }
+
+  .profile-info {
+    width: 100%; /* Taaki mobile par poori width le */
+  }
+
+  .edit-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}
